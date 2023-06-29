@@ -27,4 +27,3 @@ hola("maycol", function (nombre) {
   });
 });
 
-hola
