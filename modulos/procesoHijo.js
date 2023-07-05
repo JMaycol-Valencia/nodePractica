@@ -4,6 +4,7 @@ const exec = require('child_process').exec;
 const { exec, spawn } = require('child_process');
 const { stdout } = require('process');
 
+//USO DE EXEC
 //AL REMPLAZAR ls -la por dir nos cambia un poco la informacion
 //exec('dir')
 // exec('ls -la', (err,stdout, sterr)=>{
