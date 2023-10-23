@@ -1,10 +1,12 @@
-const { error } = require('console');
 const fs = require('fs')
 
 function leer(ruta, cb){
     fs.readFile(ruta, (error, data) => {
-        cb(data.toString());
-
+        if(error){
+            cb("sucedio un error al leer");
+        }else{
+            cb(data.toString());
+        }
     });
 }
 
@@ -20,11 +22,15 @@ function escribir(ruta,contenido, cb){
 
 function borrar(ruta, cb){
     fs.unlink(ruta, (error)=>{
-        cb("archivo eliminado");
+        if(error){
+            cb("sucedio un erro al eliminar el archivo");
+        }else{
+            cb("archivo eliminado con exito");
+        }
     });
 }
 
-//leer(__dirname + '/archivo.txt', console.log);
-//escribir(__dirname + '/archivo1.txt', 'soy un archivo nuevo', console.log);
-//leer(__dirname + '/archivo1.txt', console.log);
-borrar(__dirname + '/archivo1.txt', console.log);
+// leer(__dirname + '/archivo.txt', console.log);
+// escribir(__dirname + '/archivo1.txt', 'soy un archivo nuevo', console.log);
+// leer(__dirname + '/archivo1.txt', console.log);
+//borrar(__dirname + '/archivo1.txt', console.log);

@@ -20,10 +20,15 @@ function adios(nombre, micallback) {
 }
 
 //PODEMOS VER LA LLAMADA ASINCRONA DE LA FUNCION HOLA A LA FUNCION ADIOS
+// console.log("Iniciando proceso");
+// hola("maycol", function (nombre) {
+//   adios(nombre, function () {
+//     console.log("Terminando proceso");
+//   });
+// });
+
 console.log("Iniciando proceso");
-hola("maycol", function (nombre) {
-  adios(nombre, function () {
+hola("maycol", adios("maycol", function () {
     console.log("Terminando proceso");
-  });
-});
+  }));
 

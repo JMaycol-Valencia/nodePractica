@@ -1,3 +1,6 @@
+//El objeto global
+//console.log(global);
+
 let i = 0;
 let intervalo = setInterval(function(){
     console.log('Hola') 

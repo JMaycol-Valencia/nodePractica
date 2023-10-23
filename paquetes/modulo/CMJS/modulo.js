@@ -1,4 +1,3 @@
-
 function saludar(){
     console.log('Hola buenos dias , como esta ?');
 }

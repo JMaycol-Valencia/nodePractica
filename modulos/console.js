@@ -31,19 +31,17 @@ console.error('Hola Planeta error');
 console.warn('Hola Jupiter warn');
 console.table(tabla); 
 // DEMOSTRACION DE CONSOLE.GROUP
-console.log('TITULO')
-console.group();
-console.log('Lista')
-console.group();
+console.group('TITULO');
+console.group('Lista');
 console.log('1');
 console.log('2');
-console.group();
+console.group('Sublista');
 console.log('a');
 console.log('b');
-console.groupEnd();
+console.groupEnd('Sublista');
 console.log('3');
-console.groupEnd();
-console.groupEnd();
+console.groupEnd('Lista');
+console.groupEnd('TITULO');
 //DEMOSTRACION DE CONSOLE.GROUP EN FUNCIONES
 funcion1();
 //CONTADOR

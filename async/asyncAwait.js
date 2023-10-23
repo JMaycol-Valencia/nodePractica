@@ -56,6 +56,8 @@ async function main(){
     await adios(nombre)
 }
 
-
+console.log('Inciamos');
 //HACEMOS LA LLAMADA A NUESTRA FUNCION MAIN
 main();
+
+console.log('Terminamos');

@@ -22,7 +22,7 @@ function adios(nombre, micallback) {
 
 
 function conversacion(nombre, veces, calllback){
-        if(veces >= 0){
+        if(veces > 0){
         hablar(function(){
             conversacion(nombre, --veces, calllback);
         })

@@ -17,13 +17,14 @@ function router(req, res){
             res.end();
     }
 
-    // //cabeceras
+    // //cabeceras llega a ser metadatos que brinda
+    //mas informacion
     // res.writeHead(201, {'Content-Type':'text/plain'})
 
     // //escribimos la respuesta para el usuario
-    // res.write('hola, ya se usar http de NodeJS')
-    // res.end();
+    //res.write('hola, ya se usar http de NodeJS')
+    //res.end();
 }
 
 
-console.log('Escuchando http desde el puerto 3000')
+console.log('Escuchando en localhost:3000')

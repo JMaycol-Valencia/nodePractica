@@ -1,4 +1,4 @@
-// var z = 3;
+ var z = 3;
 
 
 function otraFuncion(){
@@ -8,10 +8,12 @@ function rota(){
     return z + 3;
 }
 
-function rotaAsincrona(){
+function rotaAsincrona(cb){
     setTimeout(()=>{
         try{
-            return z + 5;
+            otraFuncion();
+            console.log(z);
+            return z += 5;
         }catch(err){
             console.error('Error Controlado Asincrono');
             console.log(err.message);

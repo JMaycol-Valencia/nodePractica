@@ -1,5 +1,5 @@
 function hola(nombre) {
-    return new Promise(function(resolve,reject){
+    return new Promise((resolve,reject) => {
         console.log("Hola soy una funcion asincrona");
         setTimeout(function () {
           console.log("Hola " + nombre);
@@ -22,24 +22,23 @@ function hola(nombre) {
   function adios(nombre) {
     new Promise((resolve, reject) => {
         setTimeout(() => {
-            console.log("Adios ", nombre);
+            console.log("Adios " + nombre);
             resolve(nombre);
             reject('Sucedio un error en la funcion adios');
-          }, 1000);
+          }, 4000);
     })
   }
   
   
-  function conversacion(nombre, veces, calllback){
-          if(veces >= 0){
-          hablar(function(){
-              conversacion(nombre, --veces, calllback);
-          })
-      }else{
-          calllback(nombre,function(){
-              console.log("terminado")
-          });
-      }
+  function conversacion(nombre, veces){
+          if(veces > 0){
+            hablar('vanesa');
+            conversacion(nombre, --veces);
+        }else{
+          (nombre)=> {
+                console.log("terminado" + nombre);
+            };
+        };
   }
   
 
@@ -48,10 +47,11 @@ function hola(nombre) {
     console.log('Iniciando el proceso')
     hola('Maycol')
         .then(adios)
-        .then(hablar)
         .then((nombre) => {
-        console.log('Terminado el proceso')
+        console.log('Terminado el proceso' + ' adios ' + nombre)
     })
+        .then(conversacion('vanesa',3))
+        .then(hablar)      
     .catch(error => {
         console.error('Pausamos todo por un error...');
         console.error(error);

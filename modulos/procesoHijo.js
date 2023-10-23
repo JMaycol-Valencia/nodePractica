@@ -31,8 +31,8 @@ const { stdout } = require('process');
 //USO DE SPAWN
 let proceso = spawn('ls',['-la']);
 
-console.log(proceso.pid);       //CONOCEMOS EL ID DEL PROCESO A EJECUTARSE
-console.log(proceso.connected);     //VERIFICAMOS SI ESTA CONECTADO
+ console.log(proceso.pid);       //CONOCEMOS EL ID DEL PROCESO A EJECUTARSE
+ console.log(proceso.connected);     //VERIFICAMOS SI ESTA CONECTADO
 
 proceso.stdout.on('data',function(dato){
     console.log(dato.toString())
@@ -42,3 +42,12 @@ proceso.on('exit', function(){
     console.log('el proceso termino');
     console.log(proceso.killed);
 });
+
+function fin(){
+    setTimeout(()=>{
+        console.log('Este es el final del final');
+        console.log(proceso.killed);
+    },1000)
+}
+
+fin();
